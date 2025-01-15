@@ -27,7 +27,7 @@ def save_state(state):
 def ping_website(website):
     try:
         result = subprocess.run(
-            ["ping", "-c", "1", website],
+            ["ping", "-n", "1", website],  # Modified for Windows compatibility
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
